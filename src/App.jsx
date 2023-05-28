@@ -1,12 +1,12 @@
 import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { GlobalStyle } from 'globalStyles/globalStyle';
-import { Layout } from "./components/Layout/Layout";
+import { Layout } from "components/Layout/Layout";
 
-const Home = lazy(() => import('../pages/Home/Home'));
+const Home = lazy(() => import('pages/Home/Home'));
 const SuperheroDetails = lazy(() => import('pages/Details/Details'));
 
-export const App = () => {
+const App = () => {
   return (  
     <>
       <Routes>
@@ -21,3 +21,5 @@ export const App = () => {
     </>  
   );
 };
+ 
+export default App;

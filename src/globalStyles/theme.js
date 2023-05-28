@@ -3,10 +3,9 @@ import { createTheme } from 'styled-breakpoints';
 export const themeStyles = {
     colors: {
         mainText: '#373737',
-        secondaryText: '#EBD8FF',
-        background: '#5736A3',
-        gradient: 'linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%)',
-        accent: '#5CD3A8',
+        secondaryText: '#ffffff',
+        background: '#c41e3a',
+        accent: '#ffd700',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fontSizes: {
@@ -25,7 +24,7 @@ export const themeStyles = {
         text: 1.2,
     },
     sizes: {
-        maxWidth: '1300px',
+        maxWidth: '1280px',
     },
     borders: {
         normal: '1px solid #373737',
@@ -38,22 +37,17 @@ export const themeStyles = {
     },
     shadows: {
         box: '-2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23)',
-        hover: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), 0px -1.71846px 3.43693px #AE7BE3, 0px 3.43693px 2.5777px #FBF8FF',
-        line: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF',
-        avatar: '0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF',
-        innerAvatar: '0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), 0px -2.19582px 4.39163px #AE7BE3, 0px 4.39163px 3.29372px #FBF8FF',
-        button: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25)',
     },
     transition: {
         main: '250ms cubic-bezier(0.4, 0, 0.2, 1);',
     },  
-    breakpoints: ['420px', '768px', '1300px'],
+    breakpoints: ['320px', '768px', '1280px'],
 }
 
 const themeBreakpoints = createTheme({
-    mobile: '420px',
+    mobile: '320px',
     tablet: '768px',
-    pc: '1300px',
+    pc: '1280px',
 });
 
 export const theme = { ...themeStyles, ...themeBreakpoints };
