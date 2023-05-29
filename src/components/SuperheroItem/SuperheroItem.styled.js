@@ -24,7 +24,7 @@ export const StyledLink = styled(Link)`
 export const SuperheroImg= styled.img`
   width: 100%;
   border-radius: ${theme.radii.box};
-  height: 400px;
+  height: 380px;
   object-fit: cover;
   margin-bottom: auto;
 `;

@@ -40,9 +40,7 @@ const CharacterDetails = () => {
         images
     } = superhero;
 
-    const imagePath = images
-        ? images[0].path
-        : DEFAULT_IMAGE;
+    const imagePath = images?.length ? images[0].path : DEFAULT_IMAGE;
   
     return (
         <Box p="20px 0 70px" 
@@ -63,7 +61,9 @@ const CharacterDetails = () => {
                 <SuperheroInfo
                     nickname={nickname}
                     realName={real_name}
-                    description={ origin_description} />
+                    description={origin_description}
+                    superpowers={superpowers}
+                    catchPhrase={catch_phrase} />
             </SuperheroWrapper>
         </Box>
     );

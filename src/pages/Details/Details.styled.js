@@ -4,11 +4,10 @@ import { up } from 'styled-breakpoints';
 
 export const SuperheroWrapper = styled.div`
   padding: 0 0 16px 0;
-  border-bottom: ${theme.borders.normal};
 
   ${up('tablet')} {
     display: flex;
-    gap: 16px;
+    gap: 32px;
   }
 `;
 

@@ -3,9 +3,10 @@ import { createTheme } from 'styled-breakpoints';
 export const themeStyles = {
     colors: {
         mainText: 'rgba(0, 0, 0, 0.87)',
-        secondaryText: '#ffffff',
+        secondaryText: '#6E798C',
         background: '#c41e3a',
         accent: '#FCC419',
+        white: '#ffffff',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fontSizes: {
@@ -19,6 +20,7 @@ export const themeStyles = {
     fontWeights: {
         medium: 500,
         semiBold: 600,
+        bold: 700,
     },
     lineHeights: {
         text: 1.2,
@@ -27,7 +29,7 @@ export const themeStyles = {
         maxWidth: '1280px',
     },
     borders: {
-        normal: '1px solid #373737',
+        normal: '1px solid rgba(33, 33, 33, 0.1)',
     },
     radii: {
         none: '0',
