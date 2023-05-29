@@ -5,7 +5,7 @@ export const themeStyles = {
         mainText: 'rgba(0, 0, 0, 0.87)',
         secondaryText: '#ffffff',
         background: '#c41e3a',
-        accent: '#ffd700',
+        accent: '#FCC419',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fontSizes: {
@@ -32,7 +32,8 @@ export const themeStyles = {
     radii: {
         none: '0',
         normal: '4px',
-        button: '10px',
+        box: '20px',
+        image: '40px',
         round: '50%',
     },
     shadows: {

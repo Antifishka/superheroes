@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: ${theme.fontWeights.medium};
     font-size: ${theme.fontSizes.xs};
     line-height: ${theme.lineHeights.text};
   }

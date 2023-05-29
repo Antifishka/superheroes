@@ -4,7 +4,7 @@ import { theme } from "globalStyles/theme";
 
 export const SuperheroCard = styled.li`
   padding: ${theme.space[2]}px;
-  border-radius: ${theme.radii.normal};
+  border-radius: ${theme.radii.box};
   overflow: hidden;
   box-shadow: ${theme.shadows.box};
 
@@ -23,8 +23,8 @@ export const StyledLink = styled(Link)`
 
 export const SuperheroImg= styled.img`
   width: 100%;
-  border-radius: ${theme.radii.normal};
-  height: 360px;
+  border-radius: ${theme.radii.box};
+  height: 400px;
   object-fit: cover;
   margin-bottom: auto;
 `;

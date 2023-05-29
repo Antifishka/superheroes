@@ -23,6 +23,7 @@ export const StyledLink = styled(Link)`
 
   ${up('tablet')} {
     font-size: ${theme.fontSizes.m};
+    margin-bottom: 8px;
   }
 `;
 

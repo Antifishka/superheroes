@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
+import { AddButton } from "components/AddButton/AddButton";
 import { Loader } from "components/Loader/Loader";
 import { SuperheroItem } from 'components/SuperheroItem/SuperheroItem';
 import { PaginationMUI } from 'components/Pagination/Pagination';
@@ -46,14 +47,19 @@ export default function Home() {
             <Helmet>
                 <title>Home</title>
             </Helmet> 
-
             <Title>Superheroes</Title>
+
+            <AddButton />
 
             {isLoading && <Loader />}
                     
             <SuperheroList>
                 {superheroes?.map(({ _id: id, nickname, images }) => (
-                    <SuperheroItem key={id} nickname={nickname} images={images}/>
+                    <SuperheroItem
+                        key={id}
+                        id={id}
+                        nickname={nickname}
+                        images={images} />
                 ))}
             </SuperheroList>
 

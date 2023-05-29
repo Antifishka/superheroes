@@ -8,8 +8,6 @@ export const SuperheroItem = ({id, nickname, images}) => {
     const { pathname, search } = useLocation();
     const fromPage = `${pathname}${search}`;
 
-    console.log(images, "images")
-
     return (
         <SuperheroCard>
             <Link to={`/${id}`} state={{from: fromPage}}>
@@ -25,5 +23,7 @@ export const SuperheroItem = ({id, nickname, images}) => {
 };
 
 SuperheroItem.propTypes = {
+    id: PropTypes.string.isRequired,
     nickname: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

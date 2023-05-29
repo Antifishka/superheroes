@@ -11,7 +11,7 @@ return (
         bottom="0"
         left="0"
         right="0"
-        p="0 32px"
+        p="0 16px"
         as="footer">
         <Box display="flex"
             justifyContent="center"

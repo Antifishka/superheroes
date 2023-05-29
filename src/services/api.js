@@ -15,8 +15,17 @@ async function fetchSuperheroes(page) {
     return data;
 };
 
+async function fetchSuperheroById(id) {
+    const responce = await apiInstance.get(`/api/superheroes/${id}`);
+    
+    const { superhero } = responce.data;
+
+    return superhero;
+}
+
 const api = {
     fetchSuperheroes,
+    fetchSuperheroById,
 };
 
 export default api;
