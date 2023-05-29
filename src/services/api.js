@@ -1,23 +1,22 @@
 import axios from "axios";
+import { HOST_URL } from "constants/constants"
 
 const apiInstance = axios.create({
-    baseURL: 'https://6437cc410c58d3b145798156.mockapi.io/api',
+    baseURL: HOST_URL,
 });
 
-async function fetchUsers() {
-    const response = await apiInstance.get('/users');
-     
-    const users = response.data;
+async function fetchSuperheroes(page) {
+    const { data } = await apiInstance.get(`/api/superheroes?page=${page}`);
 
-    if (!users.length) {
-        throw new Error(`Sorry, there are no users.`)
+    if (!data.superheroes.length) {
+        throw new Error(`Sorry, there are no superheroes.`)
     }
 
-    return users;
+    return data;
 };
 
 const api = {
-    fetchUsers,
+    fetchSuperheroes,
 };
 
 export default api;

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#EBD8FF',
+      main: '#c41e3a',
     },
   },
 });
@@ -21,7 +21,7 @@ export const PaginationMUI = ({page, pages, onClick}) => {
           <Pagination
             color="primary" 
             size="large"
-            count={pages || 1}
+            count={pages}
             page={page}
             onChange={onClick}
           />

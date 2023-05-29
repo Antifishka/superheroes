@@ -1,6 +1,7 @@
 import { Box } from 'components/Box/Box';
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { ThumbImg } from "./Layout.styled";
 import { Footer } from 'components/Footer/Footer';
 import { theme } from 'globalStyles/theme';
 
@@ -11,9 +12,11 @@ export const Layout = () => {
       minHeight="100%"
       maxWidth={theme.sizes.maxWidth}
       m="0 auto"
-      p={["0 20px", "0 20px", "0 32px"]}>
-      <div></div>
-  
+      p="0 16px">
+      <header>
+        <ThumbImg></ThumbImg>
+      </header>
+
       <Suspense fallback={null}>
         <Outlet />
       </Suspense> 

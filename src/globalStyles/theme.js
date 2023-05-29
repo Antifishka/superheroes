@@ -2,7 +2,7 @@ import { createTheme } from 'styled-breakpoints';
 
 export const themeStyles = {
     colors: {
-        mainText: '#373737',
+        mainText: 'rgba(0, 0, 0, 0.87)',
         secondaryText: '#ffffff',
         background: '#c41e3a',
         accent: '#ffd700',
@@ -11,8 +11,8 @@ export const themeStyles = {
     fontSizes: {
         xxs: '12px',
         xs: '14px',
-        s: '18px',
-        m: '20px',
+        s: '16px',
+        m: '18px',
         l: '32px',
         xl: '64px',
     },
@@ -31,12 +31,12 @@ export const themeStyles = {
     },
     radii: {
         none: '0',
+        normal: '4px',
         button: '10px',
-        normal: '20px',
         round: '50%',
     },
     shadows: {
-        box: '-2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23)',
+        box: '0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%)',
     },
     transition: {
         main: '250ms cubic-bezier(0.4, 0, 0.2, 1);',
