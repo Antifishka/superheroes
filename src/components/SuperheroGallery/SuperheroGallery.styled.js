@@ -12,10 +12,11 @@ export const GalleryList = styled.ul`
 `;
 
 export const GalleryItem = styled.li`
-  padding: ${theme.space[2]}px;
+  display: flex;
+  align-items: center;
   border-radius: ${theme.radii.box};
-  overflow: hidden;
   box-shadow: ${theme.shadows.box};
+  overflow: hidden;
 
   transform: scale(1);
   transition: ${theme.transition.main};
@@ -28,8 +29,6 @@ export const GalleryItem = styled.li`
 
 export const GalleryImg = styled.img`
   width: 100%;
-  border-radius: ${theme.radii.box};
   height: 300px;
   object-fit: cover;
-  margin-bottom: auto;
 `;

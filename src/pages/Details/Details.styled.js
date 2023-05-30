@@ -15,6 +15,9 @@ export const ThumbImg = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
+  border-radius: ${theme.radii.image};
+  box-shadow: ${theme.shadows.box};
+  overflow: hidden;
 
   ${up('tablet')} {
     margin-bottom: 0;
@@ -22,8 +25,7 @@ export const ThumbImg = styled.div`
 `;
 
 export const SuperheroImg = styled.img`
-  border-radius: ${theme.radii.image};
-  box-shadow: ${theme.shadows.box};
+  width: 100%;
   object-fit: cover;
 `;
 

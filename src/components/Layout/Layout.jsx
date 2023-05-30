@@ -2,6 +2,7 @@ import { Box } from 'components/Box/Box';
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { ThumbImg } from "./Layout.styled";
+import { Loader } from "components/Loader/Loader";
 import { Footer } from 'components/Footer/Footer';
 import { theme } from 'globalStyles/theme';
 
@@ -17,7 +18,7 @@ export const Layout = () => {
         <ThumbImg></ThumbImg>
       </header>
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense> 
 
