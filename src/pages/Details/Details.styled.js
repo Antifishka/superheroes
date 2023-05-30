@@ -24,6 +24,7 @@ export const ThumbImg = styled.div`
 export const SuperheroImg = styled.img`
   border-radius: ${theme.radii.image};
   box-shadow: ${theme.shadows.box};
+  object-fit: cover;
 `;
 
 export const SuperheroInfo = styled.div`

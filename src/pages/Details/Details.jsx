@@ -5,10 +5,12 @@ import { Box } from "components/Box/Box";
 import { Helmet } from 'react-helmet';
 import { SuperheroWrapper, ThumbImg, SuperheroImg } from "./Details.styled";
 import { SuperheroInfo } from "components/SuperheroInfo/SuperheroInfo";
+import { SuperheroGallery } from "components/SuperheroGallery/SuperheroGallery";
 import { BackButton } from "components/BackButton/BackButton";
+import { Title } from "components/Title/Title";
 import DEFAULT_IMAGE from "assets/images/default-image.png";
 
-const CharacterDetails = () => {
+const SuperheroDetails = () => {
     const { heroId } = useParams();
     const [superhero, setSuperhero] = useState([]);
   
@@ -58,6 +60,7 @@ const CharacterDetails = () => {
                         alt={nickname}
                         width="300" />
                 </ThumbImg>
+
                 <SuperheroInfo
                     nickname={nickname}
                     realName={real_name}
@@ -65,8 +68,12 @@ const CharacterDetails = () => {
                     superpowers={superpowers}
                     catchPhrase={catch_phrase} />
             </SuperheroWrapper>
+
+            <Title>Gallery</Title>
+            
+            <SuperheroGallery images={images} />
         </Box>
     );
 };
 
-export default CharacterDetails;
+export default SuperheroDetails;

@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: ${theme.fontSizes.xs};
     line-height: ${theme.lineHeights.text};
   }

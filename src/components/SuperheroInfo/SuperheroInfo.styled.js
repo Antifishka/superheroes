@@ -22,6 +22,10 @@ export const Title = styled.p`
 `;
 export const SuperheroInfoList = styled.ul`
   padding: 0 16px;
+
+  ${up('tablet')} {
+    width: calc(100vw - 2*16px - 300px - 32px);
+  }
 `;
 
 export const SuperheroInfoItem = styled.li`

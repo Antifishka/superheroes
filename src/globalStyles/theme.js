@@ -7,6 +7,7 @@ export const themeStyles = {
         background: '#c41e3a',
         accent: '#FCC419',
         white: '#ffffff',
+        bgFooter: '#f7f7f7',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fontSizes: {
@@ -44,11 +45,11 @@ export const themeStyles = {
     transition: {
         main: '250ms cubic-bezier(0.4, 0, 0.2, 1);',
     },  
-    breakpoints: ['320px', '768px', '1280px'],
+    breakpoints: ['392px', '768px', '1280px'],
 }
 
 const themeBreakpoints = createTheme({
-    mobile: '320px',
+    mobile: '392px',
     tablet: '768px',
     pc: '1280px',
 });

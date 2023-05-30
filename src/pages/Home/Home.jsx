@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
+import { Title } from "components/Title/Title";
 import { AddButton } from "components/AddButton/AddButton";
 import { Loader } from "components/Loader/Loader";
 import { SuperheroItem } from 'components/SuperheroItem/SuperheroItem';
 import { PaginationMUI } from 'components/Pagination/Pagination';
 import { Box } from "components/Box/Box";
-import { Title, SuperheroList } from './Home.styled';
+import { SuperheroList } from './Home.styled';
 
 export default function Home() {
     const [superheroes, setSuperheroes] = useState([]);

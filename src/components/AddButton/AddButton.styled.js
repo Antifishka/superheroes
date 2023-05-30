@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { theme } from "globalStyles/theme";
+import { up } from 'styled-breakpoints';
 
 export const Text = styled.p`
-    font-size: ${theme.fontSizes.m};
-
+    font-size: ${theme.fontSizes.s};
+    ${up('mobile')} {
+        font-size: ${theme.fontSizes.m};
+    }
 `;
 
 export const Button = styled.button`

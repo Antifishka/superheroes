@@ -34,6 +34,8 @@ export const SuperheroInfo = ({ nickname, realName, description, superpowers, ca
 
 SuperheroInfo.propTypes = {
     nickname: PropTypes.string.isRequired,
-    // nickname: PropTypes.string.isRequired,
-    // images: PropTypes.arrayOf(PropTypes.object).isRequired,
+    realName: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    superpowers: PropTypes.string.isRequired, 
+    catchPhrase: PropTypes.string.isRequired,
 };

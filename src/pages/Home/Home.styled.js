@@ -1,13 +1,4 @@
 import styled from "styled-components";
-import { theme } from "globalStyles/theme";
-
-export const Title = styled.h2`
-  padding-top: 16px;
-  margin-bottom: 16px;
-  text-align: center;
-  
-  color: ${theme.colors.mainText};
-`;
 
 export const SuperheroList = styled.ul`
   display: grid;

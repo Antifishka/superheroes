@@ -11,14 +11,13 @@ return (
         bottom="0"
         left="0"
         right="0"
-        p="0 16px"
+        bg={theme.colors.bgFooter}
         as="footer">
         <Box display="flex"
             justifyContent="center"
             alignItems="center"
             gridGap="8px"
-            p="16px 0"
-            borderTop={theme.borders.normal}>
+            p="16px 0">
             <Text>&#169; 2023 </Text>
 
             <span>| </span>

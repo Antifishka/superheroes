@@ -25,5 +25,5 @@ export const SuperheroItem = ({id, nickname, images}) => {
 SuperheroItem.propTypes = {
     id: PropTypes.string.isRequired,
     nickname: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(PropTypes.object).isRequired,
+    images: PropTypes.arrayOf(PropTypes.object),
 };
