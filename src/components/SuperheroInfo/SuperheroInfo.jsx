@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { selectSuperheroes } from "redux/selectors";
 import {
     SuperheroNick,
     Title,
@@ -6,14 +8,28 @@ import {
     Prop,
     Text,
 } from "./SuperheroInfo.styled";
-import PropTypes from 'prop-types';
 
-export const SuperheroInfo = ({ nickname, realName, description, superpowers, catchPhrase }) => {
+export const SuperheroInfo = () => {
+    const superheroById = useSelector(selectSuperheroes);
+    console.log(superheroById, "superhero by id");
+
+    if (!superheroById) {
+        return null;
+    };
+    
+    const {
+        nickname,
+        real_name,
+        origin_description,
+        superpowers,
+        catch_phrase,
+    } = superheroById;
+
     const superheroInfo = [
-        { prop: 'Real name', value: realName || 'Unknown'},
-        { prop: 'Description', value: description || 'Unknown' },
+        { prop: 'Real name', value: real_name || 'Unknown'},
+        { prop: 'Description', value: origin_description || 'Unknown' },
         { prop: 'Superpowers', value: superpowers || 'Unknown' },
-        { prop: 'Catchphrase', value: catchPhrase || 'Unknown' },
+        { prop: 'Catchphrase', value: catch_phrase || 'Unknown' },
     ]
 
     return (
@@ -30,12 +46,4 @@ export const SuperheroInfo = ({ nickname, realName, description, superpowers, ca
             </SuperheroInfoList>
         </div>    
     );
-};
-
-SuperheroInfo.propTypes = {
-    nickname: PropTypes.string.isRequired,
-    realName: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    superpowers: PropTypes.string.isRequired, 
-    catchPhrase: PropTypes.string.isRequired,
 };

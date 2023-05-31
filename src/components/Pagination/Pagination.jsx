@@ -1,9 +1,11 @@
-import * as React from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { selectPage, selectTotalPages } from "redux/selectors";
+import { setPage } from "redux/paginationSlice";
+import { fetchSuperheroes } from "redux/operations";
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { PaginationWrapper } from './Pagination.styled';
-import PropTypes from 'prop-types';
 
 const theme = createTheme({
   palette: {
@@ -13,26 +15,29 @@ const theme = createTheme({
   },
 });
 
-export const PaginationMUI = ({page, pages, onClick}) => {
+export const PaginationMUI = () => {
+  const page = useSelector(selectPage);
+  const pages = useSelector(selectTotalPages);
+  const dispatch = useDispatch();
+
+  const handleChangePage = ( value) => {
+    dispatch(setPage(value));
+    dispatch(fetchSuperheroes(page));
+  };
+
   return (
     <PaginationWrapper>
       <ThemeProvider theme={theme}>
         <Stack spacing={3}>
           <Pagination
-            color="primary" 
+            color="primary"
             size="large"
             count={pages}
             page={page}
-            onChange={onClick}
+            onChange={handleChangePage}
           />
         </Stack>
-      </ThemeProvider>    
+      </ThemeProvider>
     </PaginationWrapper>
   );
-}
-
-PaginationMUI.propTypes = {
-  page: PropTypes.number.isRequired,
-  pages: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
 };

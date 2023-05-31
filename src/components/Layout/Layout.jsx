@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { ThumbImg } from "./Layout.styled";
 import { Loader } from "components/Loader/Loader";
 import { Footer } from 'components/Footer/Footer';
+import { Toaster } from 'react-hot-toast';
 import { theme } from 'globalStyles/theme';
 
 export const Layout = () => {
@@ -23,6 +24,8 @@ export const Layout = () => {
       </Suspense> 
 
       <Footer />
+
+      <Toaster position="top-right" reverseOrder={false} />
     </Box>
   );
 };

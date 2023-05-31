@@ -1,46 +1,29 @@
-import { useState, useEffect } from "react";
-import API from 'services/api';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectError, selectIsLoading, selectPage } from "redux/selectors";
+import { fetchSuperheroes } from "redux/operations";
 import { Helmet } from 'react-helmet';
 import { Title } from "components/Title/Title";
 import { AddButton } from "components/AddButton/AddButton";
 import { Loader } from "components/Loader/Loader";
-import { SuperheroItem } from 'components/SuperheroItem/SuperheroItem';
 import { PaginationMUI } from 'components/Pagination/Pagination';
 import { Box } from "components/Box/Box";
-import { SuperheroList } from './Home.styled';
+import { SuperheroList } from 'components/SuperheroList/SuperheroList';
+import toast from 'react-hot-toast';
 
 export default function Home() {
-    const [superheroes, setSuperheroes] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
+    const dispatch = useDispatch();
+    const isLoading = useSelector(selectIsLoading);
+    const error = useSelector(selectError);
+    const page = useSelector(selectPage);
 
     useEffect(() => {
-        setIsLoading(true);
-        getSuperheroes();
+        dispatch(fetchSuperheroes(page));
+        error && toast.error('No response from server!');
+    }, [dispatch, error, page]);
 
-        async function getSuperheroes() {
-            try {
-                const {superheroes, total, per_page} = await API.fetchSuperheroes(page);
-                console.log(superheroes, "fetch superheroes");
-                setSuperheroes(superheroes);
-            
-                const totalPages = Math.ceil(total / per_page);
-                console.log(totalPages, "total pages");
-            
-                setTotalPages(totalPages);
-            } catch (error) {
-                console.log(error);
-            } finally {
-                setIsLoading(false);
-            };
-        };
-    }, [page]);
-
-    const handleChangePage = (e, value) => {
-        setPage(value);
-    };
-
+    const showContacs = isLoading && !error;
+   
     return (
         <Box p="32px 0 142px" 
             minHeight="100%"
@@ -52,22 +35,9 @@ export default function Home() {
 
             <AddButton />
 
-            {isLoading && <Loader />}
-                    
-            <SuperheroList>
-                {superheroes?.map(({ _id: id, nickname, images }) => (
-                    <SuperheroItem
-                        key={id}
-                        id={id}
-                        nickname={nickname}
-                        images={images} />
-                ))}
-            </SuperheroList>
+            {showContacs ? <Loader /> : <SuperheroList />}
 
-            <PaginationMUI
-                page={page}
-                pages={totalPages}
-                onClick={handleChangePage} />
+            <PaginationMUI />
         </Box>
     );
 };

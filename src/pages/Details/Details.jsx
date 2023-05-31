@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import API from "services/api";
+import { selectSuperheroes, selectError } from "redux/selectors";
+import { fetchSuperheroById } from "redux/operations";
 import { Box } from "components/Box/Box";
 import { Helmet } from 'react-helmet';
 import { SuperheroWrapper, ThumbImg, SuperheroImg } from "./Details.styled";
@@ -9,40 +11,20 @@ import { SuperheroGallery } from "components/SuperheroGallery/SuperheroGallery";
 import { BackButton } from "components/BackButton/BackButton";
 import { Title } from "components/Title/Title";
 import DEFAULT_IMAGE from "assets/images/default-image.png";
+import toast from 'react-hot-toast';
 
 const SuperheroDetails = () => {
     const { heroId } = useParams();
-    const [superhero, setSuperhero] = useState([]);
-  
-    useEffect(() => {
-        getSuperheroById();
-
-        async function getSuperheroById() {
-            try {
-                const fetchSuperhero = await API.fetchSuperheroById(heroId);
-                console.log(fetchSuperhero, "superhero's datails");
-                setSuperhero(fetchSuperhero);
-
-            } catch (error) {
-                console.log(error);
-            };
-        };
-    }, [heroId]);
-
-    if (!superhero) {
-        return null;
-    };
-    
-    const {
-        nickname,
-        real_name,
-        origin_description,
-        superpowers,
-        catch_phrase,
-        images
-    } = superhero;
-
+    const dispatch = useDispatch();
+    const error = useSelector(selectError);
+    const superhero = useSelector(selectSuperheroes);
+    const { nickname, images } = superhero;
     const imagePath = images?.length ? images[0].path : DEFAULT_IMAGE;
+
+    useEffect(() => {
+        dispatch(fetchSuperheroById(heroId));
+        error && toast.error('No response from server!');
+    }, [dispatch, error, heroId]);
   
     return (
         <Box p="20px 0 70px" 
@@ -61,12 +43,7 @@ const SuperheroDetails = () => {
                         width="300" />
                 </ThumbImg>
 
-                <SuperheroInfo
-                    nickname={nickname}
-                    realName={real_name}
-                    description={origin_description}
-                    superpowers={superpowers}
-                    catchPhrase={catch_phrase} />
+                <SuperheroInfo />
             </SuperheroWrapper>
 
             <Title>Gallery</Title>
