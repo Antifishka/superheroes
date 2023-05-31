@@ -4,7 +4,7 @@ import { SuperheroListWrapper } from "./SuperheroList.styled";
 import { SuperheroItem } from 'components/SuperheroItem/SuperheroItem';
 
 export const SuperheroList = () => {
-    const { superheroes } = useSelector(selectSuperheroes);
+    const superheroes = useSelector(selectSuperheroes);
     console.log(superheroes, "fetch superheroes");
 
     return (

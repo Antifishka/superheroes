@@ -8,6 +8,7 @@ export const themeStyles = {
         accent: '#FCC419',
         white: '#ffffff',
         bgFooter: '#f7f7f7',
+        error: 'red',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fontSizes: {
@@ -27,6 +28,9 @@ export const themeStyles = {
         text: 1.2,
     },
     sizes: {
+        minWidth: '256px',
+        formWidth: '400px',
+        mediumWidth: '512px',
         maxWidth: '1280px',
     },
     borders: {
