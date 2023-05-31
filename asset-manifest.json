@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/superheroes/static/css/main.17654e45.css",
-    "main.js": "/superheroes/static/js/main.604b7b7c.js",
-    "static/js/453.5cde271d.chunk.js": "/superheroes/static/js/453.5cde271d.chunk.js",
+    "main.js": "/superheroes/static/js/main.00cec318.js",
+    "static/js/453.94235933.chunk.js": "/superheroes/static/js/453.94235933.chunk.js",
     "static/js/163.6ab05f1c.chunk.js": "/superheroes/static/js/163.6ab05f1c.chunk.js",
     "static/js/270.6d73d11f.chunk.js": "/superheroes/static/js/270.6d73d11f.chunk.js",
     "static/js/405.e32023eb.chunk.js": "/superheroes/static/js/405.e32023eb.chunk.js",
@@ -13,8 +13,8 @@
     "static/media/clear.svg": "/superheroes/static/media/clear.ea7b21d466059d247652313757bac17e.svg",
     "static/media/plus.svg": "/superheroes/static/media/plus.40b2205dc2516cb92de4e8f4f8627464.svg",
     "main.17654e45.css.map": "/superheroes/static/css/main.17654e45.css.map",
-    "main.604b7b7c.js.map": "/superheroes/static/js/main.604b7b7c.js.map",
-    "453.5cde271d.chunk.js.map": "/superheroes/static/js/453.5cde271d.chunk.js.map",
+    "main.00cec318.js.map": "/superheroes/static/js/main.00cec318.js.map",
+    "453.94235933.chunk.js.map": "/superheroes/static/js/453.94235933.chunk.js.map",
     "163.6ab05f1c.chunk.js.map": "/superheroes/static/js/163.6ab05f1c.chunk.js.map",
     "270.6d73d11f.chunk.js.map": "/superheroes/static/js/270.6d73d11f.chunk.js.map",
     "405.e32023eb.chunk.js.map": "/superheroes/static/js/405.e32023eb.chunk.js.map",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.17654e45.css",
-    "static/js/main.604b7b7c.js"
+    "static/js/main.00cec318.js"
   ]
 }
