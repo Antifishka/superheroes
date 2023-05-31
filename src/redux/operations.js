@@ -9,7 +9,7 @@ export const fetchSuperheroes = createAsyncThunk(
     async ( page = 1 , thunkAPI) => {
         try {
             const { data } = await axios.get(`/api/superheroes?page=${page}`);
-            console.log(data, "data");
+
             return data;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.message);
@@ -54,4 +54,17 @@ export const deleteSuperhero = createAsyncThunk(
             return thunkAPI.rejectWithValue(e.message);
         }
     }
+);
+
+export const updateSuperhero = createAsyncThunk(
+    'contacts/updateSuperhero',
+    async (credentials, id, { rejectWithValue }) => {
+        try {
+            const response = await axios.patch(`/api/superheroes/${id}`, credentials);
+        
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+  }
 );

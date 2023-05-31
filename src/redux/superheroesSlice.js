@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchSuperheroes, fetchSuperheroById, addSuperhero, deleteSuperhero } from "./operations";
+import {
+    fetchSuperheroes,
+    fetchSuperheroById,
+    addSuperhero,
+    deleteSuperhero,
+    updateSuperhero
+} from "./operations";
 
 const handlePending = state => {
     state.isLoading = true;
@@ -49,20 +55,20 @@ const superheroesSlice = createSlice({
         [deleteSuperhero.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            // const index = state.superheroes.findIndex(superhero => superhero._id === action.payload.id);
-            // state.superheroes.splice(index, 1);
-            const res = state.superheroes.filter(item => action.payload.id !== item._id);
-            state.superheroes = res;
+            const index = state.superheroes.findIndex(superhero => superhero._id === action.payload);
+            state.superheroes.splice(index, 1);
+            // const res = state.superheroes.filter(item => action.payload.id !== item._id);
+            // state.superheroes = res;
         },
         [deleteSuperhero.rejected]: handleRejected,
-        // [updateContact.pending]: handlePending,
-        // [updateContact.fulfilled](state, action){
-        //     state.isLoading = false;
-        //     state.error = null;
-        //     const index = state.items.findIndex(contact => contact.id === action.payload.id);
-        //     state.items.splice(index, 1, action.payload);
-        // },
-        // [updateContact.rejected]: handleRejected,
+        [updateSuperhero.pending]: handlePending,
+        [updateSuperhero.fulfilled](state, action){
+            state.isLoading = false;
+            state.error = null;
+            const index = state.items.findIndex(contact => contact.id === action.payload.id);
+            state.items.splice(index, 1, action.payload);
+        },
+        [updateSuperhero.rejected]: handleRejected,
     },
 });
 

@@ -30,26 +30,40 @@ const SuperheroEditor = ({onAdd}) => {
         initialValues: {
             nickname: '',
             real_name: '',
+            origin_description: '',
+            superpowers: '',
+            catch_phrase: '',
+            images: [],
+
         },
         validationSchema: basicSchema,
-        onSubmit: ({ nickname, real_name }, { resetForm }) => {
-            console.log(nickname, real_name);
-
+        onSubmit: ({
+            nickname,
+            real_name,
+            origin_description,
+            superpowers,
+            catch_phrase,
+            images,
+        }, { resetForm }) => {
             const normalizedName = nickname.toLowerCase();
 
             const checkByNickname = superheroes.find(hero =>
                 hero.nickname.toLowerCase() === normalizedName);
 
             if (checkByNickname) {
-                return toast(`${nickname} is already in contacts.`, { icon: 'ℹ️'});
+                return toast(`${nickname} is already in superheroes.`, { icon: 'ℹ️'});
             };
 
-            const newSuperhero = {
-                nickname,
-                real_name,
-            };
+            const formData = new FormData();
+            formData.append('nickname', nickname);
+            formData.append('real_name', real_name);
+            formData.append('origin_description', origin_description);
+            formData.append('superpowers', superpowers);
+            formData.append('catch_phrase,', catch_phrase);
+            formData.append('images,', images);
+            console.log(formData, "formData");
 
-            dispatch(addSuperhero(newSuperhero));
+            dispatch(addSuperhero(formData));
             toast.success('Superhero added!');
 
             onAdd();
@@ -73,6 +87,7 @@ const SuperheroEditor = ({onAdd}) => {
                     onBlur={handleBlur} /> 
                 {errors.nickname && touched.nickname && <Error>{errors.nickname}</Error>}
             </FieldForm>
+
             <FieldForm>Real name
                 <InputForm
                     type="text"
@@ -82,7 +97,39 @@ const SuperheroEditor = ({onAdd}) => {
                     onChange={handleChange}
                     onBlur={handleBlur} />
                 {errors.real_name && touched.real_name &&<Error>{errors.real_name}</Error>}
-            </FieldForm>    
+            </FieldForm>  
+
+            <FieldForm>Description
+                <InputForm
+                    type="text"
+                    name="origin_description"
+                    value={values.origin_description}
+                    onChange={handleChange}/>
+            </FieldForm>
+
+            <FieldForm>Superpowers
+                <InputForm
+                    type="text"
+                    name="superpowers"
+                    value={values.superpowers}
+                    onChange={handleChange}/>
+            </FieldForm>
+
+            <FieldForm>Catchphrase
+                <InputForm
+                    type="text"
+                    name="catch_phrase"
+                    value={values.catch_phrase}
+                    onChange={handleChange}/>
+            </FieldForm>
+
+            <FieldForm>images
+                <InputForm
+                    type="text"
+                    name="images"
+                    value={values.images}
+                    onChange={handleChange}/>
+            </FieldForm>
             <button type="submit">Add superhero
                 <BsPersonPlus />
             </button>        

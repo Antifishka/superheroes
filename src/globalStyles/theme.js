@@ -28,7 +28,7 @@ export const themeStyles = {
         text: 1.2,
     },
     sizes: {
-        minWidth: '256px',
+        minWidth: '300px',
         formWidth: '400px',
         mediumWidth: '512px',
         maxWidth: '1280px',
