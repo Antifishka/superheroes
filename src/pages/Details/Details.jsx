@@ -9,6 +9,7 @@ import { SuperheroWrapper, ThumbImg, SuperheroImg } from "./Details.styled";
 import { SuperheroInfo } from "components/SuperheroInfo/SuperheroInfo";
 import { SuperheroGallery } from "components/SuperheroGallery/SuperheroGallery";
 import { BackButton } from "components/BackButton/BackButton";
+import { EditButton } from "components/EditButton/EditButton";
 import { Title } from "components/Title/Title";
 import DEFAULT_IMAGE from "assets/images/default-image.png";
 import toast from 'react-hot-toast';
@@ -33,8 +34,15 @@ const SuperheroDetails = () => {
             <Helmet>
                 <title>Details</title>
             </Helmet>
-                        
-            <BackButton>Go back</BackButton>
+
+            <Box display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                mb="8px" >
+                <BackButton>Go back</BackButton>
+                <EditButton />
+            </Box>
+            
 
             <SuperheroWrapper> 
                 <ThumbImg>

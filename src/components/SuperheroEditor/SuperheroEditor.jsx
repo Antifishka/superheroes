@@ -15,7 +15,7 @@ const basicSchema = yup.object().shape({
         .string()
         .min(2, 'Too Short!')
         .max(50, 'Too Long!')
-        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/)
+        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Only letters")
         .required('Nickname is required'),
     real_name: yup
         .string()

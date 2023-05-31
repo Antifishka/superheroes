@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Icon } from 'assets/icons/pensil.svg';
 import { theme } from "globalStyles/theme";
 import { up } from 'styled-breakpoints';
 
@@ -19,7 +20,7 @@ export const Button = styled.button`
     border-radius: ${theme.radii.round};
     cursor: pointer;
 
-    color: ${theme.colors.secondaryText};
+    color: ${theme.colors.white};
     background-color: ${theme.colors.background};
 
     transition: ${theme.transition.main};
@@ -28,4 +29,8 @@ export const Button = styled.button`
     :focus{
         background-color: ${theme.colors.accent};
     }
+`;
+
+export const EditIcon = styled(Icon)`
+    fill: currentColor;
 `;
