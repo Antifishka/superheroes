@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteSuperhero } from "redux/operations";
-import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { useLocation, Link } from 'react-router-dom';
 import { SuperheroCard, DeleteBtn, DeleteIcon, SuperheroImg, SuperheroInfo, SuperheroTitle } from "./SuperheroItem.styled";
 import { PlACEHOLDER_URL } from "constants/constants";
 import PropTypes from 'prop-types';
@@ -11,7 +10,10 @@ export const SuperheroItem = ({id, nickname, images}) => {
     const fromPage = `${pathname}${search}`;
     const dispatch = useDispatch();
   
-    const handleDelete = () => dispatch(deleteSuperhero(id));
+    const handleDelete = async () => {
+        await dispatch(deleteSuperhero(id));
+        window.location.reload();
+    };
 
     return (
         <SuperheroCard>
