@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { selectSuperheroes, selectError } from "redux/selectors";
+import { selectSuperheroDetails, selectError } from "redux/selectors";
 import { fetchSuperheroById } from "redux/operations";
 import { Box } from "components/Box/Box";
 import { Helmet } from 'react-helmet';
@@ -18,9 +18,10 @@ const SuperheroDetails = () => {
     const { heroId } = useParams();
     const dispatch = useDispatch();
     const error = useSelector(selectError);
-    const superhero = useSelector(selectSuperheroes);
+    const superhero = useSelector(selectSuperheroDetails);
     
     const { nickname, images } = superhero;
+
     const imagePath = images?.length ? images[0].path : DEFAULT_IMAGE;
 
     useEffect(() => {
@@ -57,7 +58,7 @@ const SuperheroDetails = () => {
 
             <Title>Gallery</Title>
             
-            <SuperheroGallery images={images} />
+            <SuperheroGallery />
         </Box>
     );
 };

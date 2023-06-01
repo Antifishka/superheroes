@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectSuperheroes } from "redux/selectors";
+import { selectSuperheroDetails } from "redux/selectors";
 import {
     SuperheroNick,
     Title,
@@ -10,10 +10,10 @@ import {
 } from "./SuperheroInfo.styled";
 
 export const SuperheroInfo = () => {
-    const superheroById = useSelector(selectSuperheroes);
-    console.log(superheroById, "superhero by id");
+    const superhero = useSelector(selectSuperheroDetails);
+    console.log(superhero, "superhero details");
 
-    if (!superheroById) {
+    if (!superhero) {
         return null;
     };
     
@@ -23,7 +23,7 @@ export const SuperheroInfo = () => {
         origin_description,
         superpowers,
         catch_phrase,
-    } = superheroById;
+    } = superhero;
 
     const superheroInfo = [
         { prop: 'Real name', value: real_name || 'Unknown'},

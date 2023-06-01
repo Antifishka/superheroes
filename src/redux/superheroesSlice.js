@@ -20,6 +20,7 @@ const superheroesSlice = createSlice({
     name: "superheroes",
     initialState: {
         superheroes: [],
+        superheroDetails: {},
         perPage: 1,
         total: 1,
         isLoading: false,
@@ -39,16 +40,14 @@ const superheroesSlice = createSlice({
         [fetchSuperheroById.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            state.superheroes = action.payload;
+            state.superheroDetails = action.payload;
         },
         [fetchSuperheroById.rejected]: handleRejected,
-        [addSuperhero.pending](state, _){
-            state.isLoading = true;
-        },
+        [addSuperhero.pending]:handlePending,
         [addSuperhero.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            state.superheroes.push(action.payload);
+            state.superheroes.unshift(action.payload);
         },
         [addSuperhero.rejected]: handleRejected,
         [deleteSuperhero.pending]: handlePending,
@@ -57,16 +56,17 @@ const superheroesSlice = createSlice({
             state.error = null;
             const index = state.superheroes.findIndex(superhero => superhero._id === action.payload);
             state.superheroes.splice(index, 1);
-            // const res = state.superheroes.filter(item => action.payload.id !== item._id);
-            // state.superheroes = res;
         },
         [deleteSuperhero.rejected]: handleRejected,
         [updateSuperhero.pending]: handlePending,
         [updateSuperhero.fulfilled](state, action){
             state.isLoading = false;
             state.error = null;
-            const index = state.items.findIndex(contact => contact.id === action.payload.id);
-            state.items.splice(index, 1, action.payload);
+            const index = state.superheroes.findIndex(superhero => superhero._id === action.payload.id);
+            state.superheroes.splice(index, 1, action.payload);
+            state.superheroDetails = {
+                ...action.payload,
+            }
         },
         [updateSuperhero.rejected]: handleRejected,
     },

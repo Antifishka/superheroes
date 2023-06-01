@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux";
+import { selectSuperheroDetails } from "redux/selectors";
 import { GalleryList, GalleryItem, GalleryImg } from "./SuperheroGallery.styled";
 import { Box } from "components/Box/Box";
 import { PlACEHOLDER_URL } from "constants/constants";
-import PropTypes from 'prop-types';
 
-export const SuperheroGallery = ({ images }) => {
+export const SuperheroGallery = () => {
+    const superhero = useSelector(selectSuperheroDetails);
+    const { images } = superhero;
+    
     return (
     <>
         { images?.length > 0
@@ -24,8 +28,4 @@ export const SuperheroGallery = ({ images }) => {
         }
     </>        
     );
-};
-
-SuperheroGallery.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.object),
 };

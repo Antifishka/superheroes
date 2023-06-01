@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { updateSuperhero } from "redux/operations";
-import { selectSuperheroes } from "redux/selectors";
+import { selectSuperheroDetails } from "redux/selectors";
 import { BsPersonPlus } from 'react-icons/bs';
 import toast from 'react-hot-toast';
 import { BoxForm, FieldForm, InputForm, Error } from './SuperheroEditorUpdate.styled';
@@ -25,8 +25,9 @@ const basicSchema = yup.object().shape({
 });
  
 const SuperheroEditorUpdate = ({ onUpdate }) => {
-    const superhero = useSelector(selectSuperheroes);
+    const superhero = useSelector(selectSuperheroDetails);
     const dispatch = useDispatch();
+    const id = superhero._id;
 
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
@@ -57,7 +58,7 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
             formData.append('images,', images);
             console.log(formData, "formData");
 
-            dispatch(updateSuperhero(...formData, superhero._id));
+            dispatch(updateSuperhero(...formData, id));
             toast.success('Superhero updated!');
 
             onUpdate();
