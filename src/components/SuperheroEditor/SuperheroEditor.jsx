@@ -19,7 +19,7 @@ const basicSchema = yup.object().shape({
         .required('Nickname is required'),
     real_name: yup
         .string()
-        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/)
+        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Only letters")
 });
  
 const SuperheroEditor = ({onAdd}) => {
@@ -45,6 +45,7 @@ const SuperheroEditor = ({onAdd}) => {
             catch_phrase,
             images,
         }, { resetForm }) => {
+            
             const normalizedName = nickname.toLowerCase();
 
             const checkByNickname = superheroes.find(hero =>
@@ -60,11 +61,13 @@ const SuperheroEditor = ({onAdd}) => {
             formData.append('origin_description', origin_description);
             formData.append('superpowers', superpowers);
             formData.append('catch_phrase,', catch_phrase);
-            formData.append('images,', images);
+            formData.append('images,', images.files);
             console.log(formData, "formData");
 
             dispatch(addSuperhero(formData));
-            toast.success('Superhero added!');
+            toast.success('Superhero added!').then(() => {
+                window.location.reload();
+            });
 
             onAdd();
 
@@ -123,12 +126,13 @@ const SuperheroEditor = ({onAdd}) => {
                     onChange={handleChange}/>
             </FieldForm>
 
-            <FieldForm>images
+            <FieldForm>Images
                 <InputForm
-                    type="text"
+                    type="file"
                     name="images"
                     value={values.images}
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    multiple />
             </FieldForm>
             <button type="submit">Add superhero
                 <BsPersonPlus />

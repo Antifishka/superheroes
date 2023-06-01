@@ -118,12 +118,13 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
                     onChange={handleChange}/>
             </FieldForm>
 
-            <FieldForm>images
+            <FieldForm>Images
                 <InputForm
-                    type="text"
+                    type="file"
                     name="images"
                     value={values.images}
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    multiple />
             </FieldForm>
             <button type="submit">Edit superhero
                 <BsPersonPlus />

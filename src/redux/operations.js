@@ -34,7 +34,11 @@ export const addSuperhero = createAsyncThunk(
     "superheroes/addSuperhero",
     async (superhero, thunkAPI) => {
         try {
-            const response = await axios.post("/api/superheroes", superhero);
+            const response = await axios.post("/api/superheroes", superhero, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
 
             return response.data;
         } catch (e) {
@@ -60,7 +64,12 @@ export const updateSuperhero = createAsyncThunk(
     'contacts/updateSuperhero',
     async (credentials, id, { rejectWithValue }) => {
         try {
-            const response = await axios.patch(`/api/superheroes/${id}`, credentials);
+            console.log(credentials, "credentials");
+            const response = await axios.patch(`/api/superheroes/${id}`, credentials, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
         
             return response.data;
         } catch (error) {
