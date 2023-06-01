@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box } from "components/Box/Box";
 import { Text, Button, EditIcon } from "./EditButton.styled";
 import { Modal } from "components/Modal/Modal";
-import SuperheroEditor from "components/SuperheroEditor/SuperheroEditor";
+import SuperheroEditorUpdate from "components/SuperheroEditorUpdate/SuperheroEditorUpdate";
 
 export const EditButton = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +22,7 @@ export const EditButton = () => {
 
             {isModalOpen && (
                 <Modal onClose={toggleModal}>
-                    <SuperheroEditor onAdd={toggleModal} />
+                    <SuperheroEditorUpdate onUpdate={toggleModal} />
                 </Modal>)}
         </>    
         

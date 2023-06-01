@@ -19,6 +19,7 @@ const SuperheroDetails = () => {
     const dispatch = useDispatch();
     const error = useSelector(selectError);
     const superhero = useSelector(selectSuperheroes);
+    
     const { nickname, images } = superhero;
     const imagePath = images?.length ? images[0].path : DEFAULT_IMAGE;
 
