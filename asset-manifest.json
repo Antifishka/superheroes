@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/superheroes/static/css/main.17654e45.css",
-    "main.js": "/superheroes/static/js/main.33e2d314.js",
-    "static/js/498.ba022377.chunk.js": "/superheroes/static/js/498.ba022377.chunk.js",
-    "static/js/831.fb87310b.chunk.js": "/superheroes/static/js/831.fb87310b.chunk.js",
-    "static/js/729.a7e043d6.chunk.js": "/superheroes/static/js/729.a7e043d6.chunk.js",
+    "main.js": "/superheroes/static/js/main.838ccd72.js",
+    "static/js/498.d7cdf1bd.chunk.js": "/superheroes/static/js/498.d7cdf1bd.chunk.js",
+    "static/js/831.d5bb6c84.chunk.js": "/superheroes/static/js/831.d5bb6c84.chunk.js",
+    "static/js/148.e83268a2.chunk.js": "/superheroes/static/js/148.e83268a2.chunk.js",
     "static/js/577.cc1ff0e7.chunk.js": "/superheroes/static/js/577.cc1ff0e7.chunk.js",
     "static/js/856.de0ee87a.chunk.js": "/superheroes/static/js/856.de0ee87a.chunk.js",
     "static/media/superheroes.png": "/superheroes/static/media/superheroes.4ac889a2dbc303de0d4b.png",
@@ -14,15 +14,15 @@
     "static/media/clear.svg": "/superheroes/static/media/clear.ea7b21d466059d247652313757bac17e.svg",
     "static/media/plus.svg": "/superheroes/static/media/plus.40b2205dc2516cb92de4e8f4f8627464.svg",
     "main.17654e45.css.map": "/superheroes/static/css/main.17654e45.css.map",
-    "main.33e2d314.js.map": "/superheroes/static/js/main.33e2d314.js.map",
-    "498.ba022377.chunk.js.map": "/superheroes/static/js/498.ba022377.chunk.js.map",
-    "831.fb87310b.chunk.js.map": "/superheroes/static/js/831.fb87310b.chunk.js.map",
-    "729.a7e043d6.chunk.js.map": "/superheroes/static/js/729.a7e043d6.chunk.js.map",
+    "main.838ccd72.js.map": "/superheroes/static/js/main.838ccd72.js.map",
+    "498.d7cdf1bd.chunk.js.map": "/superheroes/static/js/498.d7cdf1bd.chunk.js.map",
+    "831.d5bb6c84.chunk.js.map": "/superheroes/static/js/831.d5bb6c84.chunk.js.map",
+    "148.e83268a2.chunk.js.map": "/superheroes/static/js/148.e83268a2.chunk.js.map",
     "577.cc1ff0e7.chunk.js.map": "/superheroes/static/js/577.cc1ff0e7.chunk.js.map",
     "856.de0ee87a.chunk.js.map": "/superheroes/static/js/856.de0ee87a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17654e45.css",
-    "static/js/main.33e2d314.js"
+    "static/js/main.838ccd72.js"
   ]
 }
