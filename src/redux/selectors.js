@@ -1,3 +1,5 @@
+import { createSelector } from "@reduxjs/toolkit";
+
 export const selectSuperheroes = state => state.superheroes.superheroes;
 
 export const selectSuperheroDetails = state => state.superheroes.superheroDetails;
@@ -11,3 +13,13 @@ export const selectIsLoading = state => state.superheroes.isLoading;
 export const selectError = state => state.superheroes.error;
 
 export const selectPage = state => state.pagination;
+
+export const selectTotalPages = createSelector(
+    [selectPerPage, selectTotal],
+    (perPage, total) => {
+        const totalPages = Math.ceil(total / perPage);
+        console.log(totalPages, "totalPages");
+
+        return totalPages;
+    }
+);

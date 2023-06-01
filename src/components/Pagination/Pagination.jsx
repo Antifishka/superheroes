@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectPage, selectPerPage, selectTotal } from "redux/selectors";
+import { selectPage, selectTotalPages } from "redux/selectors";
 import { setPage } from "redux/paginationSlice";
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import Pagination from '@mui/material/Pagination';
@@ -16,12 +16,8 @@ const theme = createTheme({
 
 export const PaginationMUI = () => {
   const page = useSelector(selectPage);
-  const perPage = useSelector(selectPerPage);
-  const total = useSelector(selectTotal);
+  const pages = useSelector(selectTotalPages);
   const dispatch = useDispatch();
-
-  const totalPages = Math.ceil(total / perPage);
-  console.log(totalPages, "totalPages");
 
   const handleChangePage = (e, value) => {
     dispatch(setPage(value));
@@ -34,7 +30,7 @@ export const PaginationMUI = () => {
           <Pagination
             color="primary"
             size="large"
-            count={totalPages}
+            count={pages}
             page={page}
             onChange={handleChangePage}
           />
