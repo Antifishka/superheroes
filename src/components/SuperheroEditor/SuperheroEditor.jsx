@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { BoxForm, FieldForm, InputForm, Error } from './SuperheroEditor.styled';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { theme } from 'globalStyles/theme';
 import { Box } from "components/Box/Box";
@@ -22,11 +23,11 @@ const basicSchema = yup.object().shape({
         .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Only letters")
 });
  
-const SuperheroEditor = ({onAdd}) => {
+const SuperheroEditor = ({ onAdd }) => {
     const superheroes = useSelector(selectSuperheroes);
     const dispatch = useDispatch();
 
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
         initialValues: {
             nickname: '',
             real_name: '',
@@ -56,18 +57,19 @@ const SuperheroEditor = ({onAdd}) => {
             };
 
             const formData = new FormData();
+            formData.append('id', nanoid());
             formData.append('nickname', nickname);
             formData.append('real_name', real_name);
             formData.append('origin_description', origin_description);
             formData.append('superpowers', superpowers);
             formData.append('catch_phrase,', catch_phrase);
-            formData.append('images,', images.files);
+            for(let i=0; i< images.length; i++){
+                formData.append('images', images[i]);
+            };
             console.log(formData, "formData");
 
             dispatch(addSuperhero(formData));
-            toast.success('Superhero added!').then(() => {
-                window.location.reload();
-            });
+            toast.success('Superhero added!');
 
             onAdd();
 
@@ -130,9 +132,11 @@ const SuperheroEditor = ({onAdd}) => {
                 <InputForm
                     type="file"
                     name="images"
-                    value={values.images}
-                    onChange={handleChange}
-                    multiple />
+                    multiple 
+                    onChange={(event) => {
+                        setFieldValue('images', event.currentTarget.files);
+                    }}
+                    />
             </FieldForm>
             <button type="submit">Add superhero
                 <BsPersonPlus />

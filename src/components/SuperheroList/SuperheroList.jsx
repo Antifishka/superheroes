@@ -11,7 +11,7 @@ export const SuperheroList = () => {
        <SuperheroListWrapper>
                 {superheroes?.map(({ _id: id, nickname, images }) => (
                     <SuperheroItem
-                        key={id}
+                        key={id || nickname}
                         id={id}
                         nickname={nickname}
                         images={images} />

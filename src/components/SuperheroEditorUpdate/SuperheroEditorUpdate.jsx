@@ -29,7 +29,7 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
     const dispatch = useDispatch();
     const id = superhero._id;
 
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
         initialValues: {
             nickname: superhero.nickname,
             real_name: superhero.real_name,
@@ -55,7 +55,9 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
             formData.append('origin_description', origin_description);
             formData.append('superpowers', superpowers);
             formData.append('catch_phrase,', catch_phrase);
-            formData.append('images,', images);
+            for(let i=0; i< images.length; i++){
+                formData.append('images', images[i]);
+            };
             console.log(formData, "formData");
 
             dispatch(updateSuperhero(...formData, id));
@@ -122,9 +124,9 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
                 <InputForm
                     type="file"
                     name="images"
-                    value={values.images}
-                    onChange={handleChange}
-                    multiple />
+                    multiple
+                    onChange={e => setFieldValue('images', e.currentTarget.files)}
+                />
             </FieldForm>
             <button type="submit">Edit superhero
                 <BsPersonPlus />
