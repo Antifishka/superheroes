@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addSuperhero } from "redux/operations";
 import { selectSuperheroes } from "redux/selectors";
-import { BsPersonPlus } from 'react-icons/bs';
+import { GiNinjaHeroicStance } from 'react-icons/gi';
 import toast from 'react-hot-toast';
+import { Button } from 'components/Button/Button';
 import { BoxForm, FieldForm, InputForm, Error } from './SuperheroEditor.styled';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -133,14 +134,13 @@ const SuperheroEditor = ({ onAdd }) => {
                     type="file"
                     name="images"
                     multiple 
-                    onChange={(event) => {
-                        setFieldValue('images', event.currentTarget.files);
-                    }}
+                    onChange={e => setFieldValue('images', e.currentTarget.files)}
                     />
             </FieldForm>
-            <button type="submit">Add superhero
-                <BsPersonPlus />
-            </button>        
+            
+            <Button type="submit">Add superhero
+                <GiNinjaHeroicStance size={18} />
+            </Button>        
         </BoxForm> 
     );
 };
