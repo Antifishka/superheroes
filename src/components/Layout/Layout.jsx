@@ -9,23 +9,25 @@ import { theme } from 'globalStyles/theme';
 
 export const Layout = () => {
   return (
-    <Box
-      position="relative"
-      minHeight="100%"
-      maxWidth={theme.sizes.maxWidth}
-      m="0 auto"
-      p="0 16px">
+    <>
       <header>
         <ThumbImg></ThumbImg>
       </header>
+      
+      <Box
+        position="relative"
+        minHeight="100%"
+        maxWidth={theme.sizes.maxWidth}
+        m="0 auto"
+        p="0 16px">
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense> 
 
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense> 
+        <Footer />
 
-      <Footer />
-
-      <Toaster position="top-right" reverseOrder={false} />
-    </Box>
+        <Toaster position="top-right" reverseOrder={false} />
+      </Box>
+    </>  
   );
 };

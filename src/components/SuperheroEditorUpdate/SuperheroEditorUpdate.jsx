@@ -28,7 +28,7 @@ const basicSchema = yup.object().shape({
 const SuperheroEditorUpdate = ({ onUpdate }) => {
     const superhero = useSelector(selectSuperheroDetails);
     const dispatch = useDispatch();
-    const id = superhero._id;
+     const id = superhero._id
 
     const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
         initialValues: {
@@ -61,7 +61,7 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
             };
             console.log(formData, "formData");
 
-            dispatch(updateSuperhero(...formData, id));
+            dispatch(updateSuperhero(...formData, id ));
             toast.success('Superhero updated!');
 
             onUpdate();

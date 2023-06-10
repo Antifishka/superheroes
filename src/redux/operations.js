@@ -61,11 +61,12 @@ export const deleteSuperhero = createAsyncThunk(
 );
 
 export const updateSuperhero = createAsyncThunk(
-    'contacts/updateSuperhero',
-    async (credentials, id, { rejectWithValue }) => {
+    'superheroes/updateSuperhero',
+    async ({ credentials, id }, { rejectWithValue }) => {
         try {
             console.log(credentials, "credentials");
-            const response = await axios.patch(`/api/superheroes/${id}`, credentials, {
+            const response = await axios.patch(`/api/superheroes/${id}`,
+                credentials, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
