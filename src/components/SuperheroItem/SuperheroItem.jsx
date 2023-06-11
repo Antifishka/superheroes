@@ -15,6 +15,8 @@ export const SuperheroItem = ({id, nickname, images}) => {
         window.location.reload();
     };
 
+    const imagePath = images?.length ? images[0].path : PlACEHOLDER_URL;
+
     return (
         <SuperheroCard>
             <DeleteBtn type="button" onClick={handleDelete}>
@@ -23,7 +25,7 @@ export const SuperheroItem = ({id, nickname, images}) => {
 
             <Link to={`/${id}`} state={{from: fromPage}}>
                 <SuperheroImg
-                    src={images[0]?.path || PlACEHOLDER_URL}
+                    src={imagePath}
                     alt={nickname} />
                 
                 <SuperheroInfo>

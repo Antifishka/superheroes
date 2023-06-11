@@ -48,6 +48,7 @@ const superheroesSlice = createSlice({
             state.isLoading = false;
             state.error = null;
             state.superheroes.unshift(action.payload);
+            state.superheroDetails = action.payload;
         },
         [addSuperhero.rejected]: handleRejected,
         [deleteSuperhero.pending]: handlePending,

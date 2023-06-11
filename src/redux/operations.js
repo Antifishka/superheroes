@@ -64,8 +64,6 @@ export const updateSuperhero = createAsyncThunk(
     'superheroes/updateSuperhero',
     async ({ formData, heroId }, thunkAPI) => {
         try {
-            console.log(formData, "credentials");
-            console.log(heroId, "heroId");
             const response = await axios.patch(`/api/superheroes/${heroId}`,
                 formData,
                 { headers: {

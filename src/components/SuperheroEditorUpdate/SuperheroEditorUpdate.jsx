@@ -59,7 +59,6 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
             for(let i=0; i< images.length; i++){
                 formData.append('images', images[i]);
             };
-            console.log(formData, "formData");
 
             dispatch(updateSuperhero({ formData, heroId }));
             toast.success('Superhero updated!');

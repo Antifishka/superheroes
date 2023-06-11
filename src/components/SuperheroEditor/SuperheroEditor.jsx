@@ -7,7 +7,6 @@ import { Button } from 'components/Button/Button';
 import { BoxForm, FieldForm, InputForm, Error } from './SuperheroEditor.styled';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { theme } from 'globalStyles/theme';
 import { Box } from "components/Box/Box";
@@ -58,7 +57,6 @@ const SuperheroEditor = ({ onAdd }) => {
             };
 
             const formData = new FormData();
-            formData.append('id', nanoid());
             formData.append('nickname', nickname);
             formData.append('real_name', real_name);
             formData.append('origin_description', origin_description);
@@ -69,7 +67,8 @@ const SuperheroEditor = ({ onAdd }) => {
             };
             console.log(formData, "formData");
 
-            dispatch(addSuperhero(formData));
+            dispatch(addSuperhero(formData))
+                .then(() => {window.location.reload()});
             toast.success('Superhero added!');
 
             onAdd();
