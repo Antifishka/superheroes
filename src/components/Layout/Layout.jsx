@@ -11,7 +11,7 @@ export const Layout = () => {
   return (
     <>
       <header>
-        <ThumbImg></ThumbImg>
+        <ThumbImg />
       </header>
       
       <Box
