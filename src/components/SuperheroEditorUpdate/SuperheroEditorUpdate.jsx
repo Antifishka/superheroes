@@ -6,24 +6,10 @@ import toast from 'react-hot-toast';
 import { Button } from 'components/Button/Button';
 import { BoxForm, FieldForm, InputForm, Error } from './SuperheroEditorUpdate.styled';
 import { useFormik } from 'formik';
-import * as yup from 'yup';
+import { basicSchema } from 'helpers/validationSchemas';
 import PropTypes from 'prop-types';
 import { theme } from 'globalStyles/theme';
 import { Box } from "components/Box/Box";
-
-const basicSchema = yup.object().shape({
-    nickname: yup
-        .string()
-        .min(2, 'Too Short!')
-        .max(30, 'Too Long!')
-        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Only letters")
-        .required('Nickname is required'),
-    real_name: yup
-        .string()
-        .min(2, 'Too Short!')
-        .max(30, 'Too Long!')
-        .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Only letters")
-});
  
 const SuperheroEditorUpdate = ({ onUpdate }) => {
     const superhero = useSelector(selectSuperheroDetails);
