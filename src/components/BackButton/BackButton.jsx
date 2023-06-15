@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 export const BackButton = ({ children }) => {
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/";
-    console.log(backLinkHref, "backLinkHref");
 
     return <StyledLink to={backLinkHref}>
         <MdArrowBack size={26} />

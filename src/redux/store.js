@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { superheroesReducer } from "./superheroesSlice";
-import { paginationReducer } from "./paginationSlice";
+import { superheroesReducer } from "./slice";
 
 export const store = configureStore({
   reducer: {
     superheroes: superheroesReducer,
-    pagination: paginationReducer,
   },
 });

@@ -11,7 +11,6 @@ import {
 
 export const SuperheroInfo = () => {
     const superhero = useSelector(selectSuperheroDetails);
-    console.log(superhero, "superhero details");
 
     if (!superhero) {
         return null;

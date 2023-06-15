@@ -6,7 +6,6 @@ import { nanoid } from 'nanoid';
 
 export const SuperheroList = () => {
     const superheroes = useSelector(selectSuperheroes);
-    console.log(superheroes, "fetch superheroes");
 
     return (
        <SuperheroListWrapper>

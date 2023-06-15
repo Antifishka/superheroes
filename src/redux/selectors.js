@@ -12,13 +12,12 @@ export const selectIsLoading = state => state.superheroes.isLoading;
 
 export const selectError = state => state.superheroes.error;
 
-export const selectPage = state => state.pagination;
+export const selectPage = state => state.superheroes.page;
 
 export const selectTotalPages = createSelector(
     [selectPerPage, selectTotal],
     (perPage, total) => {
         const totalPages = Math.ceil(total / perPage);
-        console.log(totalPages, "totalPages");
 
         return totalPages;
     }
