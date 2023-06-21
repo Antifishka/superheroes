@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  functions = "functions"
+  publish = "public"
+
+[build.environment]
+  APP_SPECIFIC_FLAG = "true"
+
+[[redirects]]
+  from = "/some-legacy-routes/*"
+  to = "/index.html"
+  status = 200

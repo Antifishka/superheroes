@@ -32,5 +32,7 @@ export const Button = styled.button`
 `;
 
 export const EditIcon = styled(Icon)`
+    width: 24px;
+    height: 24px;
     fill: currentColor;
 `;

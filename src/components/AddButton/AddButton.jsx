@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Box } from "components/Box/Box";
-import { Text, Button } from "./AddButton.styled";
-import { ReactComponent as AddIcon } from 'assets/icons/plus.svg';
+import { Text, Button, AddIcon } from "./AddButton.styled";
 import { Modal } from "components/Modal/Modal";
 import SuperheroEditor from "components/SuperheroEditor/SuperheroEditor";
 

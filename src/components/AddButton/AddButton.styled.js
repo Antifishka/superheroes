@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Icon } from 'assets/icons/plus.svg';
 import { theme } from "globalStyles/theme";
 import { up } from 'styled-breakpoints';
 
@@ -28,4 +29,9 @@ export const Button = styled.button`
     :focus{
         background-color: ${theme.colors.accent};
     }
+`;
+
+export const AddIcon = styled(Icon)`
+    width: 24px;
+    height: 24px;
 `;

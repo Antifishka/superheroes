@@ -28,7 +28,25 @@ const SuperheroDetails = () => {
         dispatch(fetchSuperheroById(heroId));
         error && toast.error('No response from server!');
     }, [dispatch, error, heroId]);
-  
+
+    // Tasks from interviev
+    // 1
+    // const fruitsArray = ["Banana", "apple", "pear", "cocos", "strawberry"];
+    // const fruitsLengthArray = fruitsArray.map(fruit => fruit.length);
+    // console.log(fruitsLengthArray, "fruits length array");
+
+    // 2
+    // const animals = ["dog", "pig", "cow"];
+    // for (const animal of animals) {
+    //     setTimeout(() => {
+    //         console.log(animal);
+    //     });
+    // };
+
+    // 3
+    // 89  96  73  83  57  70  41  57  ...
+    //   +7 -23 +10 -26 +13 -29 +16 
+
     return (
         <Box p="20px 0 70px" 
             minHeight="100%"
