@@ -3,8 +3,6 @@ const path = require('path');
 const CryptoJS = require('crypto-js');
 
 module.exports = {
-  // Решта налаштувань webpack...
-
   resolve: {
     fallback: {
       path: require.resolve('path-browserify'),

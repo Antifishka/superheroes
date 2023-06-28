@@ -58,12 +58,13 @@ export const SuperheroImg= styled.img`
 `;
 
 export const SuperheroInfo = styled.div`
-    padding: ${theme.space[3]}px;
+  padding: ${theme.space[3]}px;
 `;
 
 export const SuperheroTitle = styled.h4`
-    font-size: ${theme.fontSizes.m};
-    text-align: center;
+  font-weight: ${theme.fontWeights.bold};
+  font-size: ${theme.fontSizes.m};
+  text-align: center;
 
-    color: ${theme.colors.mainText};
+  color: ${theme.colors.mainText};
 `;

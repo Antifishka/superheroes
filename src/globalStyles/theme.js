@@ -20,8 +20,7 @@ export const themeStyles = {
         xl: '64px',
     },
     fontWeights: {
-        medium: 500,
-        semiBold: 600,
+        regular: 400,
         bold: 700,
     },
     lineHeights: {

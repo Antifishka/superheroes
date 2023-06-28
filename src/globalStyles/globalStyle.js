@@ -9,8 +9,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Baloo 2', sans-serif;
     font-size: ${theme.fontSizes.xs};
+    font-weight: ${theme.fontWeights.regular};
     line-height: ${theme.lineHeights.text};
   }
   #root { 

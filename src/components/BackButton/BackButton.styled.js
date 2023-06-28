@@ -9,6 +9,7 @@ export const StyledLink = styled(Link)`
   gap: ${theme.space[3]}px;
   
   text-transform: uppercase;
+  font-size: ${theme.fontSizes.s};
 
   color: ${theme.colors.mainText};
   transition: ${theme.transition.main};
@@ -18,11 +19,10 @@ export const StyledLink = styled(Link)`
   }
 
   ${up('mobile')} {
-    font-size: ${theme.fontSizes.s};
+    font-size: ${theme.fontSizes.m};
   }
 
   ${up('tablet')} {
-    font-size: ${theme.fontSizes.m};
     margin-bottom: 8px;
   }
 `;

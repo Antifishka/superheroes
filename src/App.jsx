@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { FontStyles } from 'globalStyles/fontStyles';
 import { GlobalStyle } from 'globalStyles/globalStyle';
 import { Layout } from "components/Layout/Layout";
 
@@ -17,6 +18,7 @@ const App = () => {
         </Route>  
       </Routes>
 
+      <FontStyles />
       <GlobalStyle />
     </>  
   );

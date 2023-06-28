@@ -7,6 +7,7 @@ export const Title = ({ children }) => {
         pt="16px"
         mb="16px"
         textAlign="center"
+        fontWeight={theme.fontWeights.bold}
         color={theme.colors.mainText}
         as="h2">
         {children}

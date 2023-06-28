@@ -32,6 +32,12 @@ export const Button = styled.button`
 `;
 
 export const AddIcon = styled(Icon)`
-    width: 24px;
-    height: 24px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    ${up('tablet')} {
+        width: 24px;
+        height: 24px;
+    }
 `;

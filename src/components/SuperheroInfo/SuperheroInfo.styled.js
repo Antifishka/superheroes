@@ -4,6 +4,7 @@ import { up } from 'styled-breakpoints';
 
 export const SuperheroNick = styled.h2`
   text-align: center;
+  font-weight: ${theme.fontWeights.bold};
   margin-bottom: 16px;
 
   ${up('tablet')} {
@@ -14,8 +15,8 @@ export const SuperheroNick = styled.h2`
 export const Title = styled.p`
   margin-bottom: 8px;
 
-  font-size: ${p => p.theme.fontSizes.m};
-  font-weight: ${p => p.theme.fontWeights.medium};
+  font-size: ${theme.fontSizes.m};
+  font-weight: ${theme.fontWeights.bold};
   letter-spacing: 0.15px;
 
   color: #8E8E93;
