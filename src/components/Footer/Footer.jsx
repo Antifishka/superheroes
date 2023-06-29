@@ -2,7 +2,7 @@ import { Box } from "components/Box/Box";
 import { Text, SocialItem, SocialLink } from "./Footer.styled";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { useBreakpoint } from 'styled-breakpoints/react-styled';
- import { up } from 'styled-breakpoints';
+import { up } from 'styled-breakpoints';
 import { theme } from 'globalStyles/theme';
 
 export const Footer = () => {
@@ -54,7 +54,7 @@ return (
             </Box>
             <span> |</span>
             
-            <Text> {useBreakpoint(up('tablet')) ? 'Developed by Antifishka 😉' : 'Antifishka 😉' }</Text>
+            <Text>{useBreakpoint(up('tablet')) ? 'Developed by Antifishka 😉' : 'Antifishka 😉' }</Text>
         </Box>
     </Box>
     );

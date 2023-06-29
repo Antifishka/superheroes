@@ -54,7 +54,8 @@ export const themeStyles = {
 const themeBreakpoints = createTheme({
     mobile: '392px',
     tablet: '768px',
-    pc: '1280px',
+    desktop: '1280px',
+    pc: '1440px'
 });
 
 export const theme = { ...themeStyles, ...themeBreakpoints };
