@@ -15,7 +15,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${theme.lineHeights.text};
   }
   #root { 
-    height: 100%; 
+    position: relative;
+    min-height: 100%; 
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

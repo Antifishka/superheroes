@@ -24,8 +24,8 @@ export const Title = styled.p`
 export const SuperheroInfoList = styled.ul`
   padding: 0 16px;
 
-  ${up('tablet')} {
-    width: calc(100vw - 2*16px - 300px - 32px);
+  ${up('desktop')} {
+    width: calc(100vw - 2*16px - 360px - 32px - (100vw - 1280px));
   }
 `;
 
@@ -47,4 +47,11 @@ export const Text = styled.p`
   letter-spacing: 0.25px;
 
   color: ${theme.colors.secondaryText};
+`;
+
+export const SuperheroInfo = styled.div`
+  max-width: 800px;
+  padding: 0 16px;
+
+  color: ${theme.colors.mainText};
 `;

@@ -14,7 +14,7 @@ export const Text = styled.p`
         font-size: ${theme.fontSizes.s};
     }
 
-    ${up('pc')} {
+    ${up('desktop')} {
         font-size: ${theme.fontSizes.m};
     }
 `

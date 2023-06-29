@@ -14,20 +14,18 @@ export const Layout = () => {
         <ThumbImg />
       </header>
       
-      <Box
-        position="relative"
-        minHeight="100%"
-        maxWidth={theme.sizes.maxWidth}
+      <Box maxWidth={theme.sizes.maxWidth}
         m="0 auto"
         p="0 16px">
+        
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense> 
-
-        <Footer />
-
-        <Toaster position="top-right" reverseOrder={false} />
       </Box>
+
+      <Footer />
+
+      <Toaster position="top-right" reverseOrder={false} />
     </>  
   );
 };

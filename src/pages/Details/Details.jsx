@@ -67,8 +67,7 @@ const SuperheroDetails = () => {
             <SuperheroWrapper> 
                 <ThumbImg>
                     <SuperheroImg src={imagePath}
-                        alt={nickname}
-                        width="300" />
+                        alt={nickname} />
                 </ThumbImg>
 
                 <SuperheroInfo />

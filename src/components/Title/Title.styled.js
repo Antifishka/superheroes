@@ -8,3 +8,4 @@ text-align: center;
 text-transform: uppercase;
 font-weight: ${theme.fontWeights.bold};
 color: ${theme.colors.mainText};
+`;

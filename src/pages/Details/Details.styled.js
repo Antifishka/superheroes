@@ -14,23 +14,21 @@ export const SuperheroWrapper = styled.div`
 export const ThumbImg = styled.div`
   display: flex;
   justify-content: center;
+  max-width: 360px;
+  min-width: 300px;
   margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: ${theme.radii.image};
   box-shadow: ${theme.shadows.box};
   overflow: hidden;
 
   ${up('tablet')} {
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
 export const SuperheroImg = styled.img`
   width: 100%;
   object-fit: cover;
-`;
-
-export const SuperheroInfo = styled.div`
-  padding: 0 16px;
-
-  color: ${theme.colors.mainText};
 `;

@@ -23,7 +23,7 @@ export const ThumbImg = styled.div`
         height: 120px;
     }
 
-    ${up('pc')} {
+    ${up('desktop')} {
         height: 140px;
     }
 `;
