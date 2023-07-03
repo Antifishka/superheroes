@@ -1,11 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { HOST_URL } from "constants/constants";
-// import 'dotenv/config';
 
-// const { HOST_URL } = process.env;
-
-axios.defaults.baseURL = HOST_URL;
+axios.defaults.baseURL = process.env.REACT_APP_HOST_URL;
 
 export const fetchSuperheroes = createAsyncThunk(
     "superheroes/fetchAll",
