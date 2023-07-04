@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectPage, selectTotalPages } from "redux/selectors";
 import { setPage } from "redux/slice";

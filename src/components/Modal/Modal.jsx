@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box } from 'components/Box/Box';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';

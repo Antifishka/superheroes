@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "components/Box/Box";
 import { Text, SocialItem, SocialLink } from "./Footer.styled";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";

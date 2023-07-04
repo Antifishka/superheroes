@@ -1,3 +1,4 @@
+import React from "react";
 import { StyledButton } from "./Button.styled";
 import PropTypes from 'prop-types';
 

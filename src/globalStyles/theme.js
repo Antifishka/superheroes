@@ -27,13 +27,13 @@ export const themeStyles = {
         text: 1.2,
     },
     sizes: {
-        minWidth: '300px',
-        formWidth: '400px',
-        mediumWidth: '512px',
+        minWidth: '360px',
+        formWidth: '512px',
         maxWidth: '1280px',
     },
     borders: {
         normal: '1px solid rgba(33, 33, 33, 0.1)',
+        input: '1px solid rgba(33, 33, 33, 0.2)',
     },
     radii: {
         none: '0',

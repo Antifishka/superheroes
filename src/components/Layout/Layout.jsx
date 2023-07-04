@@ -1,6 +1,6 @@
-import { Box } from 'components/Box/Box';
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { Box } from 'components/Box/Box';
 import { ThumbImg } from "./Layout.styled";
 import { Loader } from "components/Loader/Loader";
 import { Footer } from 'components/Footer/Footer';

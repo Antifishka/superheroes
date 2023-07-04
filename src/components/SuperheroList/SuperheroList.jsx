@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { selectSuperheroes } from "redux/selectors";
 import { SuperheroListWrapper } from "./SuperheroList.styled";

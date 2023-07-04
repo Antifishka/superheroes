@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateSuperhero } from "redux/operations";
 import { selectSuperheroDetails } from "redux/selectors";
@@ -41,7 +42,7 @@ const SuperheroEditorUpdate = ({ onUpdate }) => {
             formData.append('real_name', real_name);
             formData.append('origin_description', origin_description);
             formData.append('superpowers', superpowers);
-            formData.append('catch_phrase,', catch_phrase);
+            formData.append('catch_phrase', catch_phrase);
             for(let i=0; i< images.length; i++){
                 formData.append('images', images[i]);
             };

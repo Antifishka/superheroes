@@ -29,7 +29,8 @@ export const InputForm = styled.input`
     padding-left: ${p => p.theme.space[3]}px;
     padding-right: ${p => p.theme.space[3]}px;
     width: 100%;
-    border: 1px solid rgba(33, 33, 33, 0.2);
+    outline: transparent;
+    border: ${theme.borders.input};
     border-radius: ${p => p.theme.radii.normal};
 
     font: inherit;
@@ -37,8 +38,14 @@ export const InputForm = styled.input`
 
     background-color: #fff;
 
+    transition: ${p => p.theme.transition.main};
+
     ::placeholder {
         font-size: ${p => theme.fontSizes.s};
+    }
+
+    :focus{
+        border-color: ${theme.colors.accent};
     }
 `;
 

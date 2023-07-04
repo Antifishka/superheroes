@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Box } from "components/Box/Box";
 import { Text, Button, EditIcon } from "./EditButton.styled";
 import { Modal } from "components/Modal/Modal";

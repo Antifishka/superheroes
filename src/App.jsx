@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import React, { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { FontStyles } from 'globalStyles/fontStyles';
 import { GlobalStyle } from 'globalStyles/globalStyle';
