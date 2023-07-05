@@ -5,7 +5,6 @@ import { fetchSuperheroes } from "redux/operations";
 import { Helmet } from 'react-helmet';
 import { Title } from "components/Title/Title";
 import { AddButton } from "components/AddButton/AddButton";
-import { Loader } from "components/Loader/Loader";
 import { PaginationMUI } from 'components/Pagination/Pagination';
 import { Box } from "components/Box/Box";
 import { SuperheroList } from 'components/SuperheroList/SuperheroList';
@@ -21,8 +20,6 @@ export default function Home() {
         dispatch(fetchSuperheroes(page));
         error && toast.error('No response from server!');
     }, [dispatch, error, page]);
-
-    const showContacs = isLoading && !error;
    
     return (
         <Box p="32px 0 142px" 
@@ -35,7 +32,7 @@ export default function Home() {
 
             <AddButton />
 
-            {showContacs ? <Loader /> : <SuperheroList />}
+            <SuperheroList />
 
             <PaginationMUI />
         </Box>
