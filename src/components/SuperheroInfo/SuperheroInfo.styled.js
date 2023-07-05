@@ -23,6 +23,7 @@ export const Title = styled.p`
 `;
 export const SuperheroInfoList = styled.ul`
   padding: 0 16px;
+  margin-bottom: 4px;
 
   ${up('desktop')} {
     width: calc(100vw - 2*16px - 360px - 32px - (100vw - 1280px));
@@ -32,7 +33,9 @@ export const SuperheroInfoList = styled.ul`
 export const SuperheroInfoItem = styled.li`
   padding: 8px 0 12px 0;
 
-  border-bottom: ${theme.borders.normal};
+  :not(:last-child){
+    border-bottom: ${theme.borders.normal};
+  }
 `;
 
 export const Prop = styled.h4`
@@ -54,4 +57,8 @@ export const SuperheroInfo = styled.div`
   padding: 0 16px;
 
   color: ${theme.colors.mainText};
+`;
+
+export const ViewsCount = styled.span`
+  font-size: ${theme.fontSizes.s};
 `;

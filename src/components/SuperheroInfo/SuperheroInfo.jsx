@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectSuperheroDetails } from "redux/selectors";
+import EyeIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import {
     SuperheroNick,
     Title,
@@ -8,7 +9,9 @@ import {
     SuperheroInfoItem,
     Prop,
     Text,
+    ViewsCount,
 } from "./SuperheroInfo.styled";
+import { Box } from "components/Box/Box";
 
 export const SuperheroInfo = () => {
     const superhero = useSelector(selectSuperheroDetails);
@@ -23,7 +26,9 @@ export const SuperheroInfo = () => {
         origin_description,
         superpowers,
         catch_phrase,
+        views_count,
     } = superhero;
+    console.log(superhero, "superhero")
 
     const superheroInfo = [
         { prop: 'Real name', value: real_name || 'Unknown'},
@@ -44,6 +49,12 @@ export const SuperheroInfo = () => {
                     </SuperheroInfoItem>
                 ))}
             </SuperheroInfoList>
+            <Box display="flex" alignItems="center" gridGap="4px"
+                color="#8E8E93">
+                <EyeIcon fontSize="small" />
+                <ViewsCount>{views_count || 0}</ViewsCount>
+            </Box>
+            
         </div>    
     );
 };

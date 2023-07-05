@@ -27,7 +27,7 @@ const SuperheroDetails = () => {
     useEffect(() => {
         dispatch(fetchSuperheroById(heroId));
         error && toast.error('No response from server!');
-    }, [dispatch, error, heroId]);
+    }, []);
 
     // Tasks from interviev
     // 1

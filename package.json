@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Antifishka.github.io/superheroes",
   "dependencies": {
+    "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.2",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.3.6",
