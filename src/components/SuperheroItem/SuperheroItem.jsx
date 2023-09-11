@@ -11,9 +11,8 @@ export const SuperheroItem = ({id, nickname, images}) => {
     const fromPage = `${pathname}${search}`;
     const dispatch = useDispatch();
   
-    const handleDelete = async () => {
-        await dispatch(deleteSuperhero(id));
-        window.location.reload();
+    const handleDelete = () => {
+        dispatch(deleteSuperhero(id));
     };
 
     const imagePath = images?.length ? images[0].path : PlACEHOLDER_URL;

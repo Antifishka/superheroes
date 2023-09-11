@@ -54,10 +54,8 @@ const SuperheroEditor = ({ onAdd }) => {
             for(let i=0; i< images.length; i++){
                 formData.append('images', images[i]);
             };
-            console.log(formData, "formData");
 
-            dispatch(addSuperhero(formData))
-                .then(() => {window.location.reload()});
+            dispatch(addSuperhero(formData));
             toast.success('Superhero added!');
 
             onAdd();

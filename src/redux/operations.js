@@ -50,9 +50,9 @@ export const deleteSuperhero = createAsyncThunk(
     "superheroes/deleteSuperhero",
     async (id, thunkAPI) => {
         try {
-            const response = await axios.delete(`/api/superheroes/${id}`);
+            await axios.delete(`/api/superheroes/${id}`);
             
-            return response.data;
+            return id;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.message);
         }

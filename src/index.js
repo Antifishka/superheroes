@@ -5,17 +5,20 @@ import { ThemeProvider } from "styled-components";
 import { theme } from 'globalStyles/theme';
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { HelmetProvider } from 'react-helmet-async';
 import App from 'App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </ThemeProvider>
+      <HelmetProvider>
+        <ThemeProvider theme={theme}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ThemeProvider>
+      </HelmetProvider>  
     </HashRouter>
   </React.StrictMode>
 );

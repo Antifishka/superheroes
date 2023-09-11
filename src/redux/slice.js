@@ -54,11 +54,11 @@ const superheroesSlice = createSlice({
             .addCase(addSuperhero.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(addSuperhero.fulfilled, (state, action) => {
+            .addCase(addSuperhero.fulfilled, (state, { payload }) => {
                 state.isLoading = false;
                 state.error = null;
-                state.superheroes.unshift(action.payload);
-                state.superheroDetails = action.payload;
+                state.superheroes.unshift(payload.newSuperhero);
+                state.superheroDetails = payload.newSuperhero;
             })
             .addCase(addSuperhero.rejected, (state, action) => {
                 state.isLoading = false;
@@ -70,9 +70,7 @@ const superheroesSlice = createSlice({
             .addCase(deleteSuperhero.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                const index = state.superheroes.findIndex(
-                    (superhero) => superhero._id === action.payload
-                );
+                const index = state.superheroes.findIndex(s => s._id === action.payload);
                 state.superheroes.splice(index, 1);
             })
             .addCase(deleteSuperhero.rejected, (state, action) => {

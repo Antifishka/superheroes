@@ -4,7 +4,6 @@ import { selectSuperheroes, selectError, selectIsLoading, } from "redux/selector
 import { SuperheroListWrapper } from "./SuperheroList.styled";
 import { SuperheroItem } from 'components/SuperheroItem/SuperheroItem';
 import { MySkeleton } from "components/Skeleton/Skeleton";
-import { nanoid } from 'nanoid';
 
 export const SuperheroList = () => {
     const superheroes = useSelector(selectSuperheroes);
@@ -19,7 +18,7 @@ export const SuperheroList = () => {
                 ? <MySkeleton />
                 : superheroes?.map(({ _id: id, nickname, images }) => (
                     <SuperheroItem
-                        key={id || nanoid()}
+                        key={id}
                         id={id}
                         nickname={nickname}
                         images={images}

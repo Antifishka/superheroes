@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { selectSuperheroDetails, selectError } from "redux/selectors";
 import { fetchSuperheroById } from "redux/operations";
 import { Box } from "components/Box/Box";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { SuperheroWrapper, ThumbImg, SuperheroImg } from "./Details.styled";
 import { SuperheroInfo } from "components/SuperheroInfo/SuperheroInfo";
 import { SuperheroGallery } from "components/SuperheroGallery/SuperheroGallery";

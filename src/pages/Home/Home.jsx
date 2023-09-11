@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectIsLoading, selectPage } from "redux/selectors";
 import { fetchSuperheroes } from "redux/operations";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Title } from "components/Title/Title";
 import { AddButton } from "components/AddButton/AddButton";
 import { PaginationMUI } from 'components/Pagination/Pagination';
@@ -12,7 +12,6 @@ import toast from 'react-hot-toast';
 
 export default function Home() {
     const dispatch = useDispatch();
-    const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
     const page = useSelector(selectPage);
 
